@@ -62,13 +62,8 @@ $smt = $pdo->query("SELECT DISTINCT types FROM Contacts");
 
         <label for="types">Type</label><br>
         <select name="types" id="types">
-            <?php
-            // Loop through all types and display them as options in the dropdown
-            while ($row = $smt->fetch(PDO::FETCH_ASSOC)) {
-                // Only 'Sales Lead' and 'Support' should be options, but we can add additional types later
-                echo '<option value="' . htmlspecialchars($row['types']) . '">' . htmlspecialchars($row['types']) . '</option>';
-            }
-            ?>
+                    <option value="Sales Lead">Sales Lead</option><br><br>
+                    <option value="Support">Support</option>
         </select><br><br>
 
         <button id="SaveContact" class="buttons" type="submit">Save</button>

@@ -8,7 +8,7 @@ require_once 'schema.php';
 // Check if the user is logged in and is an Admin
 if (!isset($_SESSION['types']) || $_SESSION['types'] != 'Admin') {
     // Redirect unauthorized users
-    header('Location: dashboard.html');
+    header('Location: index3.php');
     exit();
 }
 

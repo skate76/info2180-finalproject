@@ -18,6 +18,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $types = htmlspecialchars($_POST['types']);
     $assigned_to = $_POST['assigned_to'];  // Make sure assigned_to is valid
     $created_by = $_SESSION['user_id'];
+    $created_at = date("h:i:sa") . " on " . date("d/m/Y");
+    $updated_at = date("h:i:sa") . " on " . date("d/m/Y");
 
     // Validate the 'assigned_to' field
     if (!is_numeric($assigned_to)) {
@@ -34,8 +36,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // Prepare the SQL statement
     try {
-        $stmt = $pdo->prepare('INSERT INTO Contacts (title, firstname, lastname, email, telephone, company, types, assigned_to, created_by) 
-                               VALUES (:title, :firstname, :lastname, :email, :telephone, :company, :types, :assigned_to, :created_by)');
+        $stmt = $pdo->prepare('INSERT INTO Contacts (title, firstname, lastname, email, telephone, company, types, assigned_to, created_by, created_at, updated_at) 
+                               VALUES (:title, :firstname, :lastname, :email, :telephone, :company, :types, :assigned_to, :created_by, :created_at, :updated_at)');
 
         // Bind parameters to prevent SQL injection
         $stmt->bindParam(':title', $title);
@@ -47,6 +49,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt->bindParam(':types', $types);
         $stmt->bindParam(':assigned_to', $assigned_to);
         $stmt->bindParam(':created_by', $created_by);
+        $stmt->bindParam(':created_at', $created_at);
+        $stmt->bindParam(':updated_at', $updated_at);
 
         // Execute the query and check for success
         if ($stmt->execute()) {

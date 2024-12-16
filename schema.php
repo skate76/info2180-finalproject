@@ -2,15 +2,14 @@
 
 $host = 'localhost';
 $username = 'admin@project2.com';
-$password = 'password123';
+$password = 'project2';
 $dbname = 'schema';
 
 $hashed_password = password_hash($password, PASSWORD_DEFAULT); 
 
 
 try {
-    $pdo = new PDO("mysql:host=localhost;dbname=schema.php", 'admin@project2.com', 'password123');
-    echo "Connection successful!";
+    $pdo = new PDO("mysql:host=localhost;dbname=schema.sql", $username, $password);
 
     $check_sql = "SELECT COUNT(*) FROM Users WHERE email = :email";
     $check_stmt = $pdo->prepare($check_sql);
@@ -38,6 +37,7 @@ try {
         $insert_stmt->execute();
         echo "Default admin user has been created!";
     }
+
 } catch (PDOException $e) {
     echo "Connection failed: " . $e->getMessage();
 }

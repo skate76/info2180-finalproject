@@ -2,7 +2,8 @@
 <html>
     <head>  
         <meta charset="utf-8">
-        <title>Dolphin CRM</title>
+        <a href="dashboard1.php">        <title>Dolphin CRM</title>
+</a>
         <link href = "styles.css" type="text/css" rel="stylesheet"/>
 
         <script src="script.js" type = "text/javascirpt"></script>

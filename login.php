@@ -1,14 +1,13 @@
-<?php
+<?php header('Access-Control-Allow-Origin: *'); 
 // Start the session
 session_start();
 
 // Include the database connection
 require_once 'schema.php';
-
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     
-    $email = $_POST['email'];
-    $password = $_POST['password'];
+    $email = $_GET['email'];
+    $password = $_GET['password'];
 
     
     $email = filter_var($email, FILTER_SANITIZE_EMAIL);
@@ -26,11 +25,14 @@ if ($user) {
 
     echo "Submitted password: " . $password . "<br>";
     echo "Stored hash: " . $user['password'] . "<br>";
+    $hash = PASSWORD_DEFAULT;
+    echo $hash . " - ";
     $hashed_password = password_hash($password, PASSWORD_DEFAULT); 
+    echo $hash . "   |    " . PASSWORD_DEFAULT;
+    echo "         LMOOO  " . $hashed_password;
 
-    echo $hashed_password;
-
-    if (password_verify($password, $user['password'])) {
+    if (password_verify($password, $hashed_password )) {
+        echo "test";
         
         $_SESSION['email'] = $user['email'];
         $_SESSION['user_id'] = $user['id'];

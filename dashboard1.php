@@ -29,7 +29,7 @@ $stmt = $pdo->query("SELECT title, firstname, lastname, email, company FROM Cont
         <div class="dashboard_controls">
             <h2>Contacts</h2>
             <a href="add_contact1.php" class="add_contact_button">Add New Contact</a>
-            <a href="view_users.html" class="view_user_button">View Users</a>
+            <a href="view_users.php" class="view_user_button">View Users</a>
             <a href="add_user.php" class="add_user_button">Add User</a>
 
             <form method="get" action="dashboard.php">
