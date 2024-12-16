@@ -7,8 +7,8 @@ document.addEventListener("DOMContentLoaded", function () {
     logins.addEventListener("click", function(){
         /* var email = document.getElementById("email").value;
         var psword = document.getElementById("password").value; 
-        alert(`http://localhost/v3/info2180-finalproject/login.php?email=${email}&password=${psword}`) */
-        location.replace(`http://localhost/v3/info2180-finalproject/login.php?email=admin@project2.com&password=password123`);
+        alert(`http://localhost/info2180-finalproject/login.php?email=${email}&password=${psword}`) */
+        location.replace(`http://localhost/info2180-finalproject/login.php?email=admin@project2.com&password=password123`);
 
     // Redirect to the new location with encoded parameters
     });        
