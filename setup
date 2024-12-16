@@ -1,0 +1,38 @@
+<?php
+// Include the database connection file (assuming schema.php contains your DB connection code)
+require_once 'schema.php';  // This will include your database connection setup
+
+// Check if the admin user already exists
+$sql = "SELECT COUNT(*) FROM Users WHERE email = :email";
+$stmt = $pdo->prepare($sql);
+$stmt->bindParam(':email', 'admin@project2.com');
+$stmt->execute();
+
+// If no admin user exists, insert the default admin user
+if ($stmt->fetchColumn() == 0) {
+    // The password you want to store (plaintext, it will be hashed)
+    $password = 'password123';
+    $hashed_password = password_hash($password, PASSWORD_DEFAULT); // Hash the password
+
+    // Insert the default admin user into the database
+    $insert_sql = "INSERT INTO Users (firstname, lastname, email, password, role) 
+                   VALUES (:firstname, :lastname, :email, :password, :role)";
+    
+    // Prepare the SQL statement
+    $insert_stmt = $pdo->prepare($insert_sql);
+    
+    // Bind the parameters to avoid SQL injection
+    $insert_stmt->bindParam(':firstname', 'Admin');
+    $insert_stmt->bindParam(':lastname', 'User');
+    $insert_stmt->bindParam(':email', 'admin@project2.com');
+    $insert_stmt->bindParam(':password', $hashed_password);  // Bind the hashed password here
+    $insert_stmt->bindParam(':role', 'admin');
+
+    // Execute the SQL query
+    $insert_stmt->execute();
+
+    echo "Default admin user has been created!";
+} else {
+    echo "Admin user already exists. No need to insert.";
+}
+?>

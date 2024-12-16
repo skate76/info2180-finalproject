@@ -1,0 +1,118 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background-color: #0056b3;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+header h1 {
+    font-size: 2rem;
+}
+
+/* Table Section */
+.table_section {
+    width: 90%;
+    margin: 2rem auto;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+}
+
+.table_section h2 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    color: #444;
+}
+
+.users_table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    background: #fff;
+}
+
+.users_table th,
+.users_table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+}
+
+.users_table th {
+    background-color: #0056b3;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.users_table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.users_table tr:hover {
+    background-color: #f1f9ff;
+}
+
+/* Back Button */
+.back_button {
+    display: inline-block;
+    margin: 1.5rem auto;
+    text-decoration: none;
+    background-color: #0056b3;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.back_button:hover {
+    background-color: #003d80;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem 0;
+    background-color: #0056b3;
+    color: #fff;
+    margin-top: 2rem;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .table_section {
+        width: 100%;
+        padding: 1rem;
+    }
+
+    .users_table th,
+    .users_table td {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+}

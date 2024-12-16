@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>List of Users</title>
+        <link href="view_users.css" rel="stylesheet" type="text/css">
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                fetch('view_users.php')
+                    .then(response => response.json())
+                    .then(data => {
+                        const tableBody = document.getElementById("usersTableBody");
+                        data.forEach(user => {
+                            const row = `
+                                <tr>
+                                    <td>${user.full_name}</td>
+                                    <td>${user.email}</td>
+                                    <td>${user.types}</td>
+                                    <td>${user.created_at}</td>
+                                </tr>
+                            `;
+                            tableBody.innerHTML += row;
+                        });
+                    })
+                    .catch(error => console.error('Error fetching users:', error));
+            });
+        </script>
+
+    </head>
+    <body>
+        <header>
+            <h1>User List</h1>
+        </header>
+        
+        <div class="table_section">
+            <h2>All Users</h2>
+            <table border="1" class="users_table">
+                <thead>
+                    <tr>
+                        <th>Full Name</th>
+                        <th>Email</th>
+                        <th>Role</th>
+                        <th>Date Created</th>
+                    </tr>
+                </thead>
+                <tbody id="usersTableBody">
+                    <!-- User data will be dynamically inserted here -->
+                </tbody>
+            </table>
+        </div>
+        <a href="dashboard.html" class="back_button">Back</a>
+
+
+        <footer>
+            <p>&copy; 2024 Dolphin CRM</p>
+        </footer>
+    </body>
+</html>

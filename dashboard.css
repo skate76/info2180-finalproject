@@ -1,0 +1,154 @@
+/* General Reset */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+header {
+    background-color: #0077b6;
+    color: white;
+    padding: 20px 10px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav {
+    background-color: #023e8a;
+    padding: 10px;
+    text-align: right;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 10px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.dashboard_controls {
+    padding: 20px;
+    background-color: #0077b6;
+    border-bottom: 2px solid #0077b6;
+}
+
+.dashboard_controls h2 {
+    margin-top: 0;
+}
+.add_user_button{
+    display: inline-block;
+    margin-left: 10px;
+    background-color: #90e0ef;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.add_user_button:hover {
+    background-color: #005f8a;
+}
+
+.view_user_button{
+    display: inline-block;
+    margin-left: 10px;
+    background-color: #90e0ef;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.view_user_button:hover {
+    background-color: #005f8a;
+}
+
+.add_contact_button {
+    display: inline-block;
+    margin-left: 10px;
+    background-color: #90e0ef;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.add_contact_button:hover {
+    background-color: #005f8a;
+}
+
+form {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+form label {
+    font-size: 14px;
+}
+
+form select {
+    padding: 5px;
+    margin: 0 10px;
+}
+
+.buttons {
+    background-color: #90e0ef;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.buttons:hover {
+    background-color: #005f8a;
+}
+
+.contacts_table_section {
+    padding: 20px;
+}
+
+.contacts_table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: white;
+}
+
+.contacts_table th {
+    background-color: #0077b6;
+    color: white;
+    padding: 10px;
+    text-align: left;
+    font-size: 14px;
+}
+
+.contacts_table td {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+}
+
+.contacts_table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+footer {
+    background-color: #023e8a;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+    font-size: 12px;
+}
