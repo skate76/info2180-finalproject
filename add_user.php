@@ -10,7 +10,7 @@
     <div class="form-container">
         <h1>Add User</h1>
 
-        <!-- Display error or success messages -->
+       
         <?php if (isset($error_message)): ?>
             <div class="error-message"><?php echo $error_message; ?></div>
         <?php endif; ?>
@@ -19,7 +19,7 @@
             <div class="success-message"><?php echo $success_message; ?></div>
         <?php endif; ?>
 
-        <!-- User Form -->
+       
         <form action="add_user1.php" method="POST">
             <label for="firstname">First Name</label>
             <input type="text" id="firstname" name="firstname" placeholder="Enter first name" required>

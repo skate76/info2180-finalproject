@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
         alert(`http://localhost/info2180-finalproject/login.php?email=${email}&password=${psword}`) */
         location.replace(`http://localhost/info2180-finalproject/login.php?email=admin@project2.com&password=password123`);
 
-    // Redirect to the new location with encoded parameters
+    
     });        
 
 

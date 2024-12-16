@@ -19,21 +19,21 @@ try {
 
     if (!$user_exists) {
         
-        // Step 2: Insert the default admin user into the database
+        
         $insert_sql = "INSERT INTO Users (firstname, lastname, email, password, types) 
                        VALUES (:firstname, :lastname, :email, :password, :types)";
         
-        // Prepare the SQL statement
+        //Prepare the SQL statement
         $insert_stmt = $pdo->prepare($insert_sql);
         
-        // Bind the values directly using bindValue
+        //Bind the values directly using bindValue
         $insert_stmt->bindValue(':firstname', 'Admin');
         $insert_stmt->bindValue(':lastname', 'User');
         $insert_stmt->bindValue(':email', 'admin@project2.com');
-        $insert_stmt->bindValue(':password', $hashed_password);  // Bind the hashed password
+        $insert_stmt->bindValue(':password', $hashed_password);  
         $insert_stmt->bindValue(':types', 'admin');
 
-        // Execute the SQL query
+        //Execute the SQL query
         $insert_stmt->execute();
         echo "Default admin user has been created!";
     }

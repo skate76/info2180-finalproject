@@ -1,4 +1,3 @@
-/* General Reset */
 * {
     margin: 0;
     padding: 0;
@@ -12,7 +11,7 @@ body {
     line-height: 1.6;
 }
 
-/* Header */
+
 header {
     background-color: #0056b3;
     color: #fff;
@@ -24,7 +23,7 @@ header h1 {
     font-size: 2rem;
 }
 
-/* Table Section */
+
 .table_section {
     width: 90%;
     margin: 2rem auto;
@@ -68,7 +67,7 @@ header h1 {
     background-color: #f1f9ff;
 }
 
-/* Back Button */
+
 .back_button {
     display: inline-block;
     margin: 1.5rem auto;
@@ -86,7 +85,7 @@ header h1 {
     background-color: #003d80;
 }
 
-/* Footer */
+
 footer {
     text-align: center;
     padding: 1rem 0;
@@ -99,7 +98,7 @@ footer {
     font-size: 0.9rem;
 }
 
-/* Responsive Design */
+
 @media (max-width: 768px) {
     .table_section {
         width: 100%;

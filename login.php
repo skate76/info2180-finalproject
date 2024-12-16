@@ -1,8 +1,8 @@
 <?php header('Access-Control-Allow-Origin: *'); 
-// Start the session
+
 session_start();
 
-// Include the database connection
+
 require_once 'schema.php';
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     

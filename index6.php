@@ -15,14 +15,14 @@
         <div class="contact-details-container">
             <h2>Contact Details</h2>
 
-<!-- Display contact details here -->
+
 <div id="contact-details">
-    <!-- PHP will display dynamic contact info here -->
+   
 </div>
 
 <h3>Notes</h3>
 <div id="notes-list">
-    <!-- PHP will display notes dynamically here -->
+  
 </div>
 
 <form id="add-note-form">
@@ -31,7 +31,7 @@
 </form>
 
 <script>
-// AJAX to handle adding a note
+
 $('#add-note-form').on('submit', function(e) {
     e.preventDefault();
     var noteContent = $('#note_content').val();

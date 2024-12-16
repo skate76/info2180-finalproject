@@ -7,7 +7,7 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 
-$contact_id = $_GET['id']; // Get contact ID from URL parameter
+$contact_id = $_GET['id']; 
 $stmt = $pdo->prepare('SELECT * FROM Contacts WHERE id = :id');
 $stmt->bindParam(':id', $contact_id);
 $stmt->execute();
@@ -18,7 +18,7 @@ if (!$contact) {
     exit();
 }
 
-// Fetch notes for the contact
+//Fetch notes for the contact
 $notes_stmt = $pdo->prepare('SELECT * FROM Contact_Notes WHERE contact_id = :contact_id');
 $notes_stmt->bindParam(':contact_id', $contact_id);
 $notes_stmt->execute();

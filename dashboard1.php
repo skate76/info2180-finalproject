@@ -1,8 +1,8 @@
 <?php
-// Include your database connection file
+
 require_once 'schema.php';
 
-// Fetch contacts from the Contacts table
+
 $stmt = $pdo->query("SELECT title, firstname, lastname, email, company FROM Contacts");
 ?>
 
@@ -20,12 +20,12 @@ $stmt = $pdo->query("SELECT title, firstname, lastname, email, company FROM Cont
             <h1>Dolphin CRM</h1>
         </header>
 
-        <!-- Navigation Section -->
+     
         <nav>
             <a href="logout.php">Logout</a>
         </nav>
 
-        <!-- Filter and Add Contact -->
+       
         <div class="dashboard_controls">
             <h2>Contacts</h2>
             <a href="add_contact1.php" class="add_contact_button">Add New Contact</a>
@@ -44,7 +44,7 @@ $stmt = $pdo->query("SELECT title, firstname, lastname, email, company FROM Cont
             </form>
         </div>
 
-        <!-- Contacts Table Section -->
+       
     <div class="contacts_table_section">
         <table border="1" class="contacts_table">
             <thead>
@@ -59,9 +59,9 @@ $stmt = $pdo->query("SELECT title, firstname, lastname, email, company FROM Cont
             </thead>
             <tbody>
                 <?php
-                // Loop through each contact and display them in the table
+                //Loop through each contact and display them in the table
                 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                    // Get full name
+                    //Get full name
                     $full_name = $row['firstname'] . ' ' . $row['lastname'];
 
                     echo "<tr>";
@@ -78,7 +78,7 @@ $stmt = $pdo->query("SELECT title, firstname, lastname, email, company FROM Cont
         </table>
     </div>
 
-    <!-- Footer Section -->
+
     <footer>
         <p>Copyright &copy; 2024, Dolphin CRM</p>
     </footer>
